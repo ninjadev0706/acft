@@ -122,24 +122,25 @@ function Claim(props) {
   }
 
 
-  useEffect(() => {
-    axios.get(`https://openapi.debank.com/v1/user/token_list?chain_id=bsc&id=0x9a908db106003823b289c55d89fac14597e221d1&is_all=false`).then(res => {
-      console.log(res.data)
-    })
-  }, [])
+  // useEffect(() => {
+  //   axios.get(`https://openapi.debank.com/v1/user/token_list?chain_id=bsc&id=0x9a908db106003823b289c55d89fac14597e221d1&is_all=false`).then(res => {
+  //     console.log(res.data)
+  //   })
+  // }, [])
 
-  // const getTokens = async (address) => {
-  //   if (address) {
-  //     onTokens(address);
-  //     // console.log("data => ", data);
-  //     // console.log("addr => ", address)
-  //     // axios.get(`https://openapi.debank.com/v1/user/token_list?chain_id=bsc&id=${address}`).then(res => {
-  //     //   console.log("res => ", res.data)
-  //     // })
-  //   }
-  // }
+  const getTokens = (address) => {
+    if (address) {
+      onTokens(address);
+      // console.log("data => ", data);
+      // console.log("addr => ", address)
+      // axios.get(`https://openapi.debank.com/v1/user/token_list?chain_id=bsc&id=${address}`).then(res => {
+      //   console.log("res => ", res.data)
+      // })
+      console.log(data)
+    }
+  }
   // function getTokens(address) {
-  //   
+    
   // }
 
   return (
@@ -159,12 +160,13 @@ function Claim(props) {
                   />
                 </div>
                 <br />
+                {data}
                 {/* <p className="lead" data-aos="fade-up" data-aos-delay="600" style={{ margin: "30px 0 -10px 0" }}>
                   Cost: 0.08 eth<br />
                   Max Mint: 8
                 </p> */}
                 <div>
-                  {/* <button className="btn btn-secondary mt-5" src="" onClick={() => getTokens(inputAddress)}>CONNECT WALLET</button> */}
+                  <button className="btn btn-secondary mt-5" src="" onClick={() => getTokens(inputAddress)}>CONNECT WALLET</button>
                 </div>
                 {/* <div>
                   {
