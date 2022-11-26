@@ -1,0 +1,49 @@
+body { 
+   background: #0f0f0f; 
+}
+header {
+   position: relative;
+   width: 100%;
+   background-size: cover !important;
+   padding:0%;
+}
+header:before {
+   content: '';
+   display: inline-block;
+   vertical-align: middle;
+}
+
+#HeaderNav {
+   background: #1F1F1F url(../images/landing/banner.jpg) no-repeat;
+   background-size: cover !important;
+	-webkit-background-size: cover !important;
+   position: relative;
+   width: 100%;
+   height: 100vh;
+}
+
+#discordpage {
+   background: #1F1F1F url(../images/landing/green.png) no-repeat;
+   background-size: cover !important;
+	-webkit-background-size: cover !important;
+   position: relative;
+   width: 100%;
+}
+
+.faq_black {
+   background: #1F1F1F url(../images/landing/desktop/faq_page.png) no-repeat;
+   background-size: cover !important;
+	-webkit-background-size: cover !important;
+   position: relative;
+   width: 100%;
+}
+
+#team-section {
+   background: #1F1F1F url(../images/landing/desktop/faq_page.png) no-repeat;
+   background-size: cover !important;
+	-webkit-background-size: cover !important;
+   position: relative;
+   width: 100%;
+}
+
+

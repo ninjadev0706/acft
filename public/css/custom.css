@@ -1,0 +1,1531 @@
+body {
+    overflow-x: hidden;
+}
+
+::placeholder { 
+    color: #8fe2eb;
+    opacity: 0.8;
+}
+
+.wallet_btn {
+    width: 14%;
+    border-radius: 7px;
+    background: #88eeee;
+    text-align: center;
+    margin: 2% -12% 3% 70%;
+    padding: 3px;
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.videoplayer {
+    height: 100vh;
+}
+
+.wallet_btn:hover {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+      transform: translate3d(2px, 0, 0);
+  }
+}
+
+#header_text {
+    width: 100%;
+    top: 42%;
+    height: 695px;
+}
+
+/* .navbar-toggler {
+    display: none;
+}
+
+.navcontent {
+    font-size: 20px;
+    font-weight: bold;
+} */
+
+/* .navlogo {
+    font-size: 40px;
+    font-family: 'Gagalin', sans-serif;
+    color: white;
+    margin: 10px 30px !important;
+}
+
+.navbarfont {
+    font-size: 30px;
+    margin: 15px 15px !important;
+    color: white;
+}
+
+.navpos {
+    float: right;
+}
+
+.navcontent a:hover {
+    background-color: transparent !important;
+} */
+
+/*-----------HeaderStart------------*/
+
+#home {
+    padding: 4% 9%;
+    /* display: flex; */
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.header-title {
+    font-size: 65px;
+    font-weight: bolder;
+}
+
+.header-content {
+    font-size: 45px;
+    padding: 10px 0;
+}
+
+/*-----------HeaderEnd------------*/
+
+
+
+
+
+
+/*-----------JoinSectionStart-------------*/
+
+.Join{
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.textgrp {
+    padding: 4% 9% 9% 9%;
+}
+
+.Join-title {
+    font-size: 65px;
+    font-weight: bolder;
+    text-align: left;
+    padding: 20px 0;
+}
+
+.Join-text {
+    font-size: 45px;
+    font-weight: 100;
+}
+
+/*-----------JoinSectionEnd-------------*/
+
+
+
+
+
+
+
+/*-----------MintSectionStart-------------*/
+
+.Join_btn_container {
+    width: 100%;
+    top: 63%;
+}
+
+.Join_btn {
+    color: black;
+    background-color: #77eaa9;
+    margin: -18% auto 10% auto;
+    font-size: 47px;
+    font-weight: 900;
+    padding: 11px 40px;
+    width: max-content;
+    box-shadow: #fd6d9e 0px -6px 0px 11px;
+    border-radius: 8px;
+}
+
+.Join_btn_container a{
+    text-decoration: none;
+}
+
+.plain_black{
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.mint_section_desktop {
+    display:block;
+}
+
+.mint_section_mobile {
+    display: none;
+}
+
+.mint_ctrl{
+    position: absolute;
+    width: 100%;
+    top: 25%;
+}
+
+.min_section {
+    margin: auto;
+    text-align: center;
+    width: fit-content;
+    top: 25%;
+}
+
+.mint_card {
+    background-color: black;
+    padding: 46px 20px;
+    border-radius: 30px;
+}
+
+.card_title {
+    font-size: 30px;
+    color: white;
+    font-weight: bolder;
+}
+
+.brain_value {
+    padding: 8px;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 5%;
+}
+
+.card_display {
+    top: 72%;
+}
+
+.totalnum {
+    border-radius: 10px;
+    background: #FFF;
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.mintnum {
+    color: #000;
+    font-size: 28px;
+    padding: 2px;
+    font-weight: bold;
+}
+
+.mintcount {
+    margin: 9% auto;
+    justify-content: center;
+    display: flex;
+}
+
+.mintcount button {
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #FF4C8C;
+    color: #FFFFFF;
+    border: none;
+    padding: 0 20px;
+}
+
+.mintcount input {
+    border: none !important;
+    text-align: center;
+    font-size: 34px;
+    width: 120px;
+    font-weight: bold;
+    background-color: #eff2f7;
+    height: 65px;
+    /* margin-bottom: -1px; */
+    padding: 0;
+}
+
+.connect_wallet {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    background-color: #87a594;
+    border-radius: 10px;
+    padding: 9px 0;
+    margin: 15px 0px;
+}
+
+/* .connect_wallet :disabled {
+    background: #87a594;
+} */
+
+.mint_link_btn {
+    padding: 0 15px;
+}
+
+.mint_link_btn a {
+    text-decoration: none;
+}
+
+.mint_now {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    background-color: #ff689e;
+    border-radius: 10px;
+    padding: 9px 0;
+}
+
+.card_footer {
+    font-size: 25px;
+    margin-top: 5px;
+}
+/*-----------MintSectionEnd-------------*/
+
+
+
+
+
+/*-----------RoadmapSectionStart-------------*/
+
+.roadmap_section {
+    padding: 8% 9% 20% 9%;
+}
+
+.roadmap_title {
+    padding: 2% 0;
+    color: white;
+    font-weight: bolder;
+    font-size: 65px;
+}
+
+.roadmap_per {
+    display: flex;
+    padding: 2% 0px;
+}
+
+.percentage {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding-right: 2%;
+}
+
+.per_text {
+    font-size: 40px;
+    color: white;
+}
+
+/*-----------RoadmapSectionEnd-------------*/
+
+
+
+
+
+
+
+/*-----------FAQSectionEnd-------------*/
+
+.popsicle {
+    width: 22%;
+    position: absolute;
+    right: 11%;
+    top: -20%;
+}
+
+.faqspace {
+    margin-left: 2%;
+}
+
+#faq_sector {
+    width: 78%;
+    padding: 9% 0%;
+}
+
+#faq_title{
+    font-size: 65px;
+    font-weight: bolder;
+    color: white;
+    padding: 20px 0;
+}
+
+
+.faq_element {
+    color: white;
+    position: relative;
+    border-radius: 10px;
+    text-align: left;
+    padding: 1%;
+}
+
+.faq_qus_title {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.faq_qus_content{
+    font-size:45px;
+}
+
+.footer_logo {
+    display: none;
+}
+/*-----------FAQSectionEnd-------------*/
+
+.fade.modal.show {
+    opacity: 1 !important;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100vw;
+    height: 100vh;
+    background-color: #452a7a;
+  }
+  .modal-backdrop.fade {
+    opacity: 0;
+  }
+  .modal-backdrop.show {
+    opacity: 0.5;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1055;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+  }
+  
+
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    width: 350px !important;
+    transform: none !important; 
+    margin: auto;
+
+}
+
+ .modal-dialog-centered {
+    display: flex;
+    align-items: start;
+    position: relative;
+    top: 100px;
+    min-height: calc(100% - 1rem);
+  }
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #A3F7BF;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 10px 30px;
+    outline: 0;
+  }
+
+.modal-header {
+    border-bottom: none !important;
+    font-weight: bold;
+}
+
+.modal-title {
+    display: inline;
+    font-weight: bold;
+}
+
+.btn-close {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    padding: 0.25em 0.25em;
+    color: #000;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+    border: 0;
+    border-radius: 0.25rem;
+    opacity: 0.5;
+    float: right;
+  }
+
+.modal-content div.list-group-item {
+    border: none;
+    margin-bottom: 10px;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #EFF4F5;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.wallet-logo {
+    display: inline;
+    float: right;
+}
+
+.wallet-logo img {
+    width: 20px;
+    height: 20px;
+}
+
+.col-sm-6 a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.mint_btn :focus{
+    text-decoration: none;
+    color: white;
+}
+
+.mint_btn :disabled {
+    background-color: #382838;
+}
+
+#lightblack{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.team-container {
+    width: 1500px;
+    padding-bottom: 80px;
+}
+
+.team-wrap {
+    margin: 50px 0;
+}
+
+#team_title{
+    margin-top: 80px;
+    color: yellow;
+    font-size: 105px;
+    font-family:'Gagalin', sans-serif;
+}
+
+.team_grp {
+    margin: -10%;
+    display: flex;
+    margin-top: 5%;
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.team_name{
+    padding-top: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.team_position {
+    padding-bottom: 15px;
+    color: white;
+    font-size: 25px;
+    font-family: "Barlow", sans-serif;
+}
+
+.team_img{
+    width: 300px;
+    border-radius: 50%;
+}
+
+.gallery_window {
+    width: 40%;
+    max-width: 500px;
+    border: 20px solid #00000040;
+}
+
+.gallery_item {
+    width: 100%;
+    max-width: 500px;
+}
+
+.video-container{
+    width: 100%;
+    position: absolute;
+    text-align: left;
+    top: 15%;
+    padding-left: 7%;
+}
+
+.video-title {
+    font-size: 70px;
+    width: 650px;
+}
+
+.btn_connect_wallet {
+    cursor: pointer;
+}
+
+.mint_btn{
+    cursor: pointer;
+}
+
+.image_desc {
+    width: 55%;
+}
+
+.mintnum {
+    font-size: 28px !important;
+    max-width: 300px;
+    height: 92px;
+    border: solid 3px #000;
+    border-radius: 15px;
+    margin: 0 35px;
+    background-color: #e9ecef;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-clip: padding-box;
+    appearance: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+      transform: translate3d(2px, 0, 0);
+  }
+}
+
+#lightblue {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.back_btn {
+    margin: 20px 0px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    background-color: #fd6d9e;
+}
+
+.minusbtn {
+    width: 90px;
+    height: 90px;
+}
+
+.minusbtn::before {
+        content: '';
+        position: absolute;
+        left: 5px !important;
+        top: 10px !important;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        border-radius: 50px !important;
+        z-index: -1;
+}
+
+.minttitle {
+    font-family: 'luckiest_guyregular' !important;
+    color: #fff !important;
+    font-size: 64px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #000;
+    text-transform: uppercase;
+}
+
+.mintcontainer {
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 395px) {
+
+    .header-title {
+        font-size: 20px !important;
+    }
+
+    .header-content {
+        font-size: 13px !important;
+    }
+
+    .Join-title {
+        font-size: 20px !important;
+        padding: 10px 0;
+    }
+
+    .Join-text {
+        font-size: 13px !important;
+    }
+
+    /*MINT section*/
+
+    .Join_btn {
+        margin: -11% auto 7% auto !important;
+        font-size: 15px !important;
+    }
+
+    /*MINT section*/
+
+    .mint_ctrl {
+        top: 4% !important;
+    }
+
+    .min_section {
+        width: 83% !important;
+    }
+
+    .mint_card {
+        padding: 28px 16px !important;
+    }
+
+    .card_title {
+        font-size: 24px !important;
+    }
+
+    .brain_value {
+        font-size: 25px !important;
+    }
+
+    .connect_wallet {
+        font-size: 21px !important;
+    }
+
+    .mint_now {
+        font-size: 21px !important;
+    }
+    /*faqsection*/
+    .popsicle {
+        top: -10% !important;
+        right: 8% !important;
+    }
+
+    .faqspace {
+        margin-left: -2%;
+    }
+
+    #faq_title{
+        font-size: 20px;
+        padding: 2% 0;
+        margin-left: -4%;
+    }
+
+    .faq_qus_title {
+        font-size: 12px !important;
+    }
+
+    .faq_qus_content{
+        font-size:12px !important;
+    }
+}
+
+.footer-logo {
+    width: 100%;
+}
+
+.footer-img {
+    margin-bottom: 30px;
+    width: 1000px;
+}
+
+.footer-tos {
+    text-align: center;
+    font-size: 27px;
+    margin-top: 120px;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.footer-text{
+    color: white;
+}
+
+.tossection {
+    width: 1000px;
+    margin: 30px auto;
+}
+
+.tos-title {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    background: black;
+    color: white;
+}
+
+.each-content {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.minus-btn {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.plus-btn {
+    border-radius: 0px 10px 10px 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .minusbtn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .minttitle {
+        font-size: 40px;
+    }
+
+    .video-container{
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        top: 5px;
+        left: 0;
+        padding-left: 0%;
+    }
+
+    .video-title{
+        width: 300px;
+    }
+
+    .tossection {
+        width: 90%;   
+    }
+    .videoplayer {
+        height: 86vh;
+    }
+
+    /* .navbarmargin {
+        margin-top: 60px;
+    }
+    .navbarcontent {
+        padding: 0 !important;
+    }
+
+    .navbar-header {
+        font-size: 27px;
+        margin: 10px 0px !important;
+        width: 100%;
+        display: flex;
+    }
+
+    .navbar-toggler {
+        text-align: right;
+        width: 30%;
+        height: 42px;
+        display: block;
+        margin: auto;
+        background-color: black;
+        color: white;
+        border: none;
+        margin-right: 0;
+    }
+
+    .navpos {
+        float: left;
+    }
+
+    .navbarfont {
+        font-size: 20px;
+        float: left;
+    } */
+
+    #home {
+        padding: 3% 6%;
+    }
+    .header-title {
+        font-size: 25px;
+    }
+
+    .header-content {
+        font-size: 14px;
+    }
+
+    .Join-title {
+        font-size: 25px;
+        padding: 10px 0;
+    }
+
+    .Join-text {
+        font-size: 14px;
+    }
+
+    /*MINT section*/
+
+    .Join_btn {
+        margin: -12% auto 7% auto;
+        font-size: 16px;
+        padding: 7px 17px;
+        box-shadow: #fd6d9e 0px -2px 0px 3px;
+    }
+
+    /*MINT section*/
+
+    .mint_link_btn {
+        padding: 0 15px;
+    }
+
+    .mint_section_desktop {
+        display:none;
+    }
+
+    .mint_section_mobile {
+        display: block;
+    }
+
+    .mint_ctrl {
+        top: 5%;
+    }
+
+    .mintcount button {
+        padding: 0px 12px;;
+    }
+
+    .min_section {
+        width: 81%;
+        margin-top: 25%;
+    }
+
+    .mint_card {
+        padding: 28px 16px;
+        border-radius: 25px;
+    }
+
+    .card_title {
+        font-size: 27px;
+    }
+
+    .brain_value {
+        font-size: 25px;
+    }
+
+    .mintnum {
+        font-size: 29px;
+    }
+
+    .mintcount {
+        margin: 7% auto;
+        height: 44px;
+    }
+
+    .mintcount_button {
+        font-size: 22px;
+        padding: 7px 16px;
+    }
+
+    .mintcount input {
+        padding: 0 0 0 17px;
+        height: 44px;
+        font-size: 21px;
+        width: 80px;
+    }
+
+    .connect_wallet {
+        font-size: 27px;
+    }
+
+    .mint_now {
+        font-size: 27px;
+    }
+
+    /*roadmapsection*/
+    .roadmap_title {
+        font-size: 25px;
+    }
+
+    .percentage {
+        font-size: 15px;
+    }
+
+    .per_text {
+        font-size: 15px;
+    }
+
+    /*faqsection*/
+    .popsicle {
+        top: -10%;
+        right: 8%;
+    }
+    
+    .faqspace {
+        margin-left: -2%;
+    }
+
+    #faq_title{
+        font-size: 20px;
+        padding: 2% 0;
+        margin-left: -4%;
+    }
+
+    .faq_qus_title {
+        font-size: 15px;
+    }
+
+    .faq_qus_content{
+        font-size:14px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /* .navbarmargin {
+        margin-top: 78px;
+    }
+    .navbarfont {
+        margin: 15px 0 !important;
+        font-size: 20px;
+    } */
+
+    /*Header section*/
+    .header-title {
+        font-size: 30px;
+    }
+
+    .header-content {
+        font-size: 20px;
+    }
+
+    .Join-title {
+        font-size: 30px;
+    }
+
+    .Join-text {
+        font-size: 20px;
+    }
+
+    /*MINT section*/
+
+    .Join_btn {
+        margin: -8% auto 4% auto;
+        font-size: 23px;
+        padding: 7px 17px;
+        box-shadow: #fd6d9e 0px -3px 0px 5px;
+    }
+
+    .mint_ctrl {
+        top: 9%;
+    }
+
+    .mintcount input {
+        padding: 0;
+        height: 44px;
+        width: 80px;
+        font-size: 20px;
+    }
+
+    .mintcount button {
+        padding: 0 15px;
+        font-size: 20px;
+    }
+
+    .min_section {
+        width: 31%;
+    }
+
+    .mint_card {
+        padding: 21px 15px;
+    }
+
+    .card_title {
+        font-size: 13px;
+    }
+
+    .brain_value {
+        font-size: 18px;
+    }
+
+    .connect_wallet {
+        font-size: 14px;
+    }
+
+    .mint_now {
+        font-size: 14px;
+    }
+
+    /*roadmapsection*/
+    .roadmap_title {
+        font-size: 30px;
+    }
+
+    .percentage {
+        font-size: 20px;
+    }
+
+    .per_text {
+        font-size: 20px;
+    }
+
+    /*faqsection*/
+    .popsicle {
+        top: -17%;
+    }
+    
+    #faq_title{
+        font-size: 30px;
+        padding: 2% 0;
+    }
+
+    .faq_qus_title {
+        font-size: 20px;
+    }
+
+    .faq_qus_content{
+        font-size:20px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .mintcontainer {
+        margin-top: 20px;
+    }
+
+    .mintnum {
+        max-width: 150px;
+        height: 60px;
+        margin: 0 25px;
+    }
+
+    #home {
+        display: block;
+    }
+
+    .gallery_window {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+    }
+    
+    .gallery_item {
+        width: 100%;
+        display: flex;
+    }
+    
+    .image_desc {
+        width: 100%;
+    }
+    
+    #team_title{
+        margin-top: 80px;
+        color: yellow;
+        font-size: 45px;
+        font-family:'Gagalin', sans-serif;
+    }
+}
+
+@media only screen and (min-width: 970px) {
+    #team_title{
+        margin-top: 80px;
+        color: yellow;
+        font-size: 60px;
+        font-family:'Gagalin', sans-serif;
+    }
+    /* .navbarmargin {
+        margin-top: 81px;
+    }
+    .navbarfont {
+        font-size: 20px;
+    } */
+
+    /*Header section*/
+    .header-title {
+        font-size: 40px;
+    }
+
+    .header-content {
+        font-size: 25px;
+    }
+
+    .Join-title {
+        font-size: 40px;
+    }
+
+    .Join-text {
+        font-size: 25px;
+    }
+
+    /*MINT section*/
+
+    .Join_btn {
+        margin: -11% auto 5% auto;
+        font-size: 27px;
+    }
+
+    .mint_ctrl {
+        top: 16%;
+    }
+
+    .min_section {
+        width: 31%;
+    }
+
+    .mint_card {
+        padding: 21px 15px;
+    }
+
+    .card_title {
+        font-size: 23px;
+    }
+
+    .brain_value {
+        font-size: 27px;
+    }
+
+    .connect_wallet {
+        font-size: 25px;
+    }
+
+    .mint_now {
+        font-size: 25px;
+    }
+
+    /*roadmapsection*/
+    .roadmap_title {
+        font-size: 40px;
+    }
+
+    .percentage {
+        font-size: 25px;
+    }
+
+    .per_text {
+        font-size: 25px;
+    }
+
+    /*faqsection*/
+    .popsicle {
+        top: -17%;
+    }
+    
+    #faq_title{
+        font-size: 40px;
+        padding: 2% 0;
+    }
+
+    .faq_qus_title {
+        font-size: 25px;
+    }
+
+    .faq_qus_content{
+        font-size:25px;
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    /* .navbarfont {
+        margin: 15px !important;
+        font-size: 25px;
+    } */
+
+    /*Header section*/
+    .header-title {
+        font-size: 52px;
+    }
+
+    .header-content {
+        font-size: 32px;
+    }
+
+    .Join-title {
+        font-size: 52px;
+    }
+
+    .Join-text {
+        font-size: 32px;
+    }
+
+    /*MINT section*/
+
+    .Join_btn {
+        margin: -18% auto 10% auto;
+        box-shadow: #fd6d9e 0px -4px 0px 8px;
+        font-size: 37px;
+    }
+
+    .mint_ctrl {
+        top: 29%;
+    }
+
+    .min_section {
+        width: 27%;
+    }
+
+    .card_title {
+        font-size: 24px;
+    }
+
+    .brain_value {
+        font-size: 31px;
+    }
+
+    .connect_wallet {
+        font-size: 27px;
+    }
+
+    .mint_now {
+        font-size: 27px;
+    }
+
+    /*roadmapsection*/
+    .roadmap_title {
+        font-size: 52px;
+    }
+
+    .percentage {
+        font-size: 32px;
+    }
+
+    .per_text {
+        font-size: 32px;
+    }
+
+    /*faqsection*/
+    .popsicle {
+        top: -19%;
+    }
+    
+    #faq_title{
+        font-size: 52px;
+        padding: 2% 0;
+    }
+
+    .faq_qus_title {
+        font-size: 32px;
+    }
+
+    .faq_qus_content{
+        font-size:32px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 1500px) {
+    .team-container {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1550px) {
+
+    /*Header section*/
+    .header-title {
+        font-size: 60px;
+    }
+
+    .header-content {
+        font-size: 40px;
+    }
+
+    .Join-title {
+        font-size: 60px;
+    }
+
+    .Join-text {
+        font-size: 40px;
+    }
+
+    /*MINT section*/
+
+    .Join_btn {
+        margin: -21% auto 11% auto;
+        box-shadow: #fd6d9e 0px -4px 0px 8px;
+        font-size: 46px;
+    }
+
+    .mint_ctrl {
+        top: 34%;
+    }
+
+    .min_section {
+        width: 26%;
+    }
+
+    .card_title {
+        font-size: 29px;
+    }
+
+    .brain_value {
+        font-size: 31px;
+    }
+
+    .connect_wallet {
+        font-size: 29px;
+    }
+
+    .mint_now {
+        font-size: 29px;
+    }
+
+    /*roadmapsection*/
+    .roadmap_title {
+        font-size: 60px;
+    }
+
+    .percentage {
+        font-size: 40px;
+    }
+
+    .per_text {
+        font-size: 40px;
+    }
+
+    /*faqsection*/
+    .popsicle {
+        top: -19%;
+    }
+    
+    #faq_title{
+        font-size: 60px;
+        padding: 2% 0;
+    }
+
+    .faq_qus_title {
+        font-size: 40px;
+    }
+
+    .faq_qus_content{
+        font-size: 40px;
+    }
+}
+
+@media only screen and (min-width: 1750px) {
+    
+    /*Header section*/
+    .header-title {
+        font-size: 65px;
+    }
+
+    .header-content {
+        font-size: 45px;
+    }
+
+    .Join-title {
+        font-size: 65px;
+    }
+
+    .Join-text {
+        font-size: 45px;
+    }
+
+    /*MINT section*/
+
+    .Join_btn {
+        margin: -18% auto 10% auto;
+        box-shadow: #fd6d9e 0px -6px 0px 10px;
+        font-size: 50px;
+    }
+
+    .mint_ctrl {
+        top: 28%;
+    }
+
+    .min_section {
+        width: 28%;
+    }
+
+    .mint_card {
+        padding: 33px 22px;
+    }
+
+    .card_title {
+        font-size: 40px;
+    }
+
+    .brain_value {
+        font-size: 48px;
+    }
+
+    .mintnum {
+        font-size: 46px;
+    }
+
+    .mintcount button {
+        padding: 0px 24px;
+        /* font-size: 32px; */
+    }
+
+    .mintcount input {
+        width: 120px;
+        font-size: 34px;
+        height: 65px;
+        padding: 0;
+    }
+
+    .connect_wallet {
+        font-size: 43px;
+    }
+
+    .mint_now {
+        font-size: 43px;
+    }
+
+    /*roadmapsection*/
+    .roadmap_title {
+        font-size: 65px;
+    }
+
+    .percentage {
+        font-size: 45px;
+    }
+
+    .per_text {
+        font-size: 45px;
+    }
+
+    /*faqsection*/
+    .popsicle {
+        top: -19%;
+    }
+    
+    #faq_title{
+        font-size: 65px;
+        padding: 2% 0;
+    }
+
+    .faq_qus_title {
+        font-size: 42px;
+    }
+
+    .faq_qus_content{
+        font-size: 41px;
+    }
+}
