@@ -1,102 +1,82 @@
+import React, { useEffect, useState } from 'react';
+import Box from '@mui/material/Box';
+import { Grid } from '@mui/material';
+import useMediaQuery from "@mui/material/useMediaQuery";
+import TokenList from './components/TokenList';
+import TokenHistory from './components/TokenHistory';
+import { useToken, useHistory } from './hooks/api';
+import Navbar from './Navbar';
 
-import { useEffect, useState } from 'react';
-import { useWeb3React } from '@web3-react/core'
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { BigNumber } from 'ethers'
-import { getCurrentWalletConnected, getContract } from './util/interact';
-import 'react-toastify/dist/ReactToastify.css';
-import { injected } from './util/connector'
-import Claim from './Components/SubComponents/Claim';
-import whitelists from './config/addresses.json';
-import AOS from 'aos';
+const App = () => {
+    const [walletAddress, setWalletAddress] = useState('');
+    const [tokenAddress, setTokenAddress] = useState('');
 
-const roadmaps = [
-  { 'percentage': "10%", 'text': "Mint all of the Brainiacs." },
-  { 'percentage': "20%", 'text': "LOCKDOWN DISCORD!" },
-  { 'percentage': "30%", 'text': "Verify rarites, list on rarity.tools, and activate the Brainiac NFT bot." },
-  { 'percentage': "50%", 'text': "Host first Brainstage for Brainiac holders." },
-  { 'percentage': "60%", 'text': "Announce AMA & Brainstage calendar." },
-  { 'percentage': "70%", 'text': "Community voting event." },
-  { 'percentage': "80%", 'text': "Discord community V2 update." },
-  { 'percentage': "100%", 'text': "Launch V2 Roadmap." },
-];
+    const { onTokens, tokenlist } = useToken();
+    const { onHistory, tokenhistory } = useHistory();
 
-function App() {
+    const isMobile = useMediaQuery("(max-width: 1000px)");
 
-  const whitelist = JSON.stringify(whitelists);
-  const wladdress = JSON.parse(whitelist);
-
-  const [status, setStatus] = useState(null);
-  const [loading, setMintLoading] = useState(false)
-  const [tokenPrice, setTokenPrice] = useState(null);
-  const [maxTokens, setMaxTokens] = useState(0);
-  const [maxTokenPurchase, setMaxTokenPurchase] = useState(0);
-  const [totalSupply, setTotalSupply] = useState(0)
-  const [saleIsActive, setSaleIsActive] = useState(false);
-
-  const { activate, account } = useWeb3React();
-
-  useEffect(() => {
-    AOS.init({
-      once: true
-    });
-  }, []);
-
-  useEffect(() => {
-    if (localStorage.getItem("accountStatus")) {
-      activate(injected)
+    const handleChange = (e) => {
+        setWalletAddress(e.target.value);
     }
-  }, [])
 
-  useEffect(() => {
-    if (account) {
-      (async () => {
-        let contract = getContract(account)
-        let mtb = await contract.MAX_TOKENS()
-        let mtp = await contract.maxTokenPurchase()
-        let ts = await contract.totalSupply()
-        let tp = await contract.tokenPrice()
-        let sia = await contract.saleIsActive()
-        setMaxTokens(parseInt(BigNumber.from(mtb).toString()))
-        setMaxTokenPurchase(parseInt(BigNumber.from(mtp).toString()))
-        setTotalSupply(BigNumber.from(ts).toString())
-        setTokenPrice((BigNumber.from(tp).div(BigNumber.from(1e9).mul(BigNumber.from(1e4))).toString()))  // original value * 1e5
-        setSaleIsActive(sia)
-      })();
+    const handleTx = (e) => {
+        setTokenAddress(e.target.value);
     }
-    else {
-      (async () => {
-        let contract = getContract("");
-        let mtb = await contract.MAX_TOKENS()
-        let ts = await contract.totalSupply()
-        setTotalSupply(BigNumber.from(ts).toString())
-        setMaxTokens(parseInt(BigNumber.from(mtb).toString()))
-      })();
+
+    const getTokens = () => {
+        if (walletAddress !== '') {
+            onTokens(walletAddress);
+        } else {
+            alert('input wallet address');
+        }
     }
-  }, [loading, account])
 
-  useEffect(() => {
-    (async () => {
-      const { status } = await getCurrentWalletConnected();
-      setStatus(status)
-    })();
-  }, [])
+    const getTx = () => {
+        if (tokenAddress !== '') {
+            onHistory(tokenAddress);
+        } else {
+            alert('input token address');
+        }
+    }
+
+    const handleHistory = (tokenAddress) => {
+        onHistory(tokenAddress, walletAddress);
+    }
+
+    useEffect(() => {
+        console.log("tokenlist = >", tokenhistory);
+    }, [tokenhistory])
 
 
-  return (
-    <div className="App" style={{ overflowX: "hidden" }}>
-      <BrowserRouter>
-        <Switch>
-          <Route path='/'>
-            <Claim maxTokenPurchase={maxTokenPurchase} maxTokens={maxTokens} tokenPrice={tokenPrice} setStatus={setStatus}
-              loading={loading} account={account} totalSupply={totalSupply} setMintLoading={setMintLoading} saleIsActive={saleIsActive}
-              wladdresses={wladdress} />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-
-    </div>
-  );
+    return (
+        <>
+            <Navbar />
+            <Box sx={{ flexGrow: 1 }} m='20px'>
+                {
+                    !isMobile ?
+                        <Grid container justifyContent="space-between">
+                            <Grid item xs={5}>
+                                <TokenList tokenlist={tokenlist} handleHistory={handleHistory} walletAddress={walletAddress} handleChange={handleChange} getTokens={getTokens} />
+                            </Grid>
+                            <Grid item xs={6}>
+                                <TokenHistory walletAddress={walletAddress} tokenhistories={tokenhistory?.result} tokenAddress={tokenAddress} handleTx={handleTx} getTx={getTx} />
+                            </Grid>
+                        </Grid>
+                        :
+                        <Grid container>
+                            <Grid item xs={12}>
+                                <TokenList tokenlist={tokenlist} handleHistory={handleHistory} walletAddress={walletAddress} handleChange={handleChange} getTokens={getTokens} />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TokenHistory walletAddress={walletAddress} tokenhistories={tokenhistory?.result} tokenAddress={tokenAddress} handleTx={handleTx} getTx={getTx} />
+                            </Grid>
+                        </Grid>
+                }
+            </Box>
+        </>
+    )
 }
 
 export default App;
+
