@@ -4,7 +4,7 @@ import { Grid } from '@mui/material';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import TokenList from './components/TokenList';
 import TokenHistory from './components/TokenHistory';
-import { useToken, useHistory } from './hooks/api';
+import { useToken, useHistory, useTokenPrice } from './hooks/api';
 import Navbar from './Navbar';
 
 const App = () => {
@@ -13,6 +13,7 @@ const App = () => {
 
     const { onTokens, tokenlist } = useToken();
     const { onHistory, tokenhistory } = useHistory();
+    const { onPrice, tokenprice } = useTokenPrice();
 
     const isMobile = useMediaQuery("(max-width: 1000px)");
 
@@ -32,16 +33,18 @@ const App = () => {
         }
     }
 
-    const getTx = () => {
-        if (tokenAddress !== '') {
-            onHistory(tokenAddress);
+    const getTx = (tokenAddress) => {
+        if (tokenAddress !== '' && walletAddress !== '') {
+            onHistory(tokenAddress, walletAddress);
+            onPrice(tokenAddress);
         } else {
-            alert('input token address');
+            alert('input token address or wallet address');
         }
     }
 
     const handleHistory = (tokenAddress) => {
         onHistory(tokenAddress, walletAddress);
+        onPrice(tokenAddress);
     }
 
     useEffect(() => {
@@ -60,7 +63,7 @@ const App = () => {
                                 <TokenList tokenlist={tokenlist} handleHistory={handleHistory} walletAddress={walletAddress} handleChange={handleChange} getTokens={getTokens} />
                             </Grid>
                             <Grid item xs={6}>
-                                <TokenHistory walletAddress={walletAddress} tokenhistories={tokenhistory?.result} tokenAddress={tokenAddress} handleTx={handleTx} getTx={getTx} />
+                                <TokenHistory tokenprice={tokenprice} walletAddress={walletAddress} tokenhistories={tokenhistory?.result} tokenAddress={tokenAddress} handleTx={handleTx} getTx={getTx} />
                             </Grid>
                         </Grid>
                         :
@@ -69,7 +72,7 @@ const App = () => {
                                 <TokenList tokenlist={tokenlist} handleHistory={handleHistory} walletAddress={walletAddress} handleChange={handleChange} getTokens={getTokens} />
                             </Grid>
                             <Grid item xs={12}>
-                                <TokenHistory walletAddress={walletAddress} tokenhistories={tokenhistory?.result} tokenAddress={tokenAddress} handleTx={handleTx} getTx={getTx} />
+                                <TokenHistory tokenprice={tokenprice} walletAddress={walletAddress} tokenhistories={tokenhistory?.result} tokenAddress={tokenAddress} handleTx={handleTx} getTx={getTx} />
                             </Grid>
                         </Grid>
                 }

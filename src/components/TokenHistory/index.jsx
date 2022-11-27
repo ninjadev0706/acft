@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
 import { HistoryContainer } from './styles';
 import { Title } from '../styles';
 
-const TokenHistory = ({ tokenhistories, walletAddress, tokenAddress, handleTx, getTx }) => {
+const TokenHistory = ({ tokenhistories, walletAddress, tokenAddress, handleTx, getTx, tokenprice }) => {
 
     useEffect(() => {
         console.log("history = >", tokenhistories);
@@ -25,7 +25,7 @@ const TokenHistory = ({ tokenhistories, walletAddress, tokenAddress, handleTx, g
                 <div>
                     <input value={tokenAddress} onChange={handleTx} />
                     &nbsp;
-                    <button onClick={getTx}>Get Txs</button>
+                    <button onClick={() => getTx(tokenAddress, walletAddress)}>Get Txs</button>
                 </div>
             </Title>
             <TableContainer className='tableContainer' component={Paper}>
@@ -45,13 +45,20 @@ const TokenHistory = ({ tokenhistories, walletAddress, tokenAddress, handleTx, g
                                 key={id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                                <TableCell align="center">{walletAddress?.slice(0, 5)}...{walletAddress?.slice(-5)}</TableCell>
+                                <TableCell align="center">{(tokenhistory?.from === walletAddress) ? `${tokenhistory?.to.slice(0, 5)}...${tokenhistory?.to.slice(-5)}` : `${tokenhistory?.from.slice(0, 5)}...${tokenhistory?.from.slice(-5)}`}</TableCell>
                                 <TableCell component="th" scope="row">
-
+                                    {(Number(ethers.utils.formatUnits(tokenhistory?.value, tokenhistory?.tokenDecimal)).toFixed(2))} {tokenhistory?.tokenSymbol}
                                 </TableCell>
                                 <TableCell align="center">{(tokenhistory?.from === walletAddress) ? 'Sell' : 'Buy'}</TableCell>
-                                <TableCell align="center">{(Number(ethers.utils.formatUnits(tokenhistory?.value, tokenhistory.tokenDecimal)).toFixed(2))} {tokenhistory?.tokenSymbol}</TableCell>
-                                <TableCell align="center">{tokenhistory?.gasPrice}</TableCell>
+                                <TableCell align="center">
+                                    {
+                                        tokenprice && tokenhistory &&
+                                        <>
+                                            {(Number(ethers.utils.formatUnits(tokenprice?.nativePrice.value, tokenprice?.nativePrice.decimals)) * Number(ethers.utils.formatUnits(tokenhistory?.value, tokenhistory?.tokenDecimal))).toFixed(5)} BNB
+                                        </>
+                                    }
+                                </TableCell>
+                                <TableCell align="center">{tokenhistory?.gas}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
