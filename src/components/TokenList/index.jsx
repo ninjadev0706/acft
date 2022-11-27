@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { ArrivalContainer } from './styles';
+import { TokenListContainer } from './styles';
 import { Title, } from '../styles';
 
 const TokenList = ({ tokenlist, handleHistory, walletAddress, handleChange, getTokens }) => {
@@ -20,7 +20,7 @@ const TokenList = ({ tokenlist, handleHistory, walletAddress, handleChange, getT
     }, [tokenlist])
 
     return (
-        <ArrivalContainer>
+        <TokenListContainer>
             <Title>
                 <div>
                     Token List
@@ -55,7 +55,7 @@ const TokenList = ({ tokenlist, handleHistory, walletAddress, handleChange, getT
                     </TableBody>
                 </Table>
             </TableContainer>
-        </ArrivalContainer>
+        </TokenListContainer>
     );
 }
 

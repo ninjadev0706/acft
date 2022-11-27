@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ArrivalContainer = styled.div`
+export const TokenListContainer = styled.div`
     .tableContainer {
         margin: 20px 0;
         background: #13181c;

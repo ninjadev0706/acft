@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { DeparturesContainer } from './styles';
+import { HistoryContainer } from './styles';
 import { Title } from '../styles';
 
 const TokenHistory = ({ tokenhistories, walletAddress, tokenAddress, handleTx, getTx }) => {
@@ -17,7 +17,7 @@ const TokenHistory = ({ tokenhistories, walletAddress, tokenAddress, handleTx, g
     }, [tokenhistories])
 
     return (
-        <DeparturesContainer>
+        <HistoryContainer>
             <Title>
                 <div>
                     Transactions
@@ -57,8 +57,7 @@ const TokenHistory = ({ tokenhistories, walletAddress, tokenAddress, handleTx, g
                     </TableBody>
                 </Table>
             </TableContainer>
-        </DeparturesContainer>
-
+        </HistoryContainer>
     );
 }
 
